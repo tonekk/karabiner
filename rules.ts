@@ -19,53 +19,11 @@ const rules: KarabinerRules[] = [
           }
         ],
         from: {
-          key_code: "spacebar",
-        },
-        to: [
-          {
-            key_code: "right_command",
-          },
-        ],
-      },
-      {
-        type: "basic",
-        conditions: [
-          {
-            type: "device_if",
-            identifiers: [
-              {
-                is_built_in_keyboard: true,
-              }
-            ]
-          }
-        ],
-        from: {
-          key_code: "fn",
-        },
-        to: [
-          {
-            key_code: "left_command",
-          },
-        ],
-      },
-      {
-        type: "basic",
-        conditions: [
-          {
-            type: "device_if",
-            identifiers: [
-              {
-                is_built_in_keyboard: true,
-              }
-            ]
-          }
-        ],
-        from: {
           key_code: "left_command",
         },
         to: [
           {
-            key_code: "spacebar",
+            key_code: "right_command",
           },
         ],
       },
@@ -817,14 +775,13 @@ const rules: KarabinerRules[] = [
         ],
       },
       {
-        description: "Right command -> Meh Key",
+        description: "Left option -> Left command",
         from: {
-          key_code: "right_command",
+          key_code: "left_option",
         },
         to: [
           {
-            key_code: "left_shift",
-            modifiers: ["left_control", "left_option"],
+            key_code: "left_command",
           },
         ],
         type: "basic",
@@ -837,6 +794,50 @@ const rules: KarabinerRules[] = [
               }
             ]
           }
+        ],
+      },
+      {
+        description: "Right option -> left command",
+        from: {
+          key_code: "right_option",
+        },
+        to: [
+          {
+            key_code: "left_command",
+          },
+        ],
+        type: "basic",
+        conditions: [
+          {
+            type: "device_if",
+            identifiers: [
+              {
+                is_built_in_keyboard: true,
+              }
+            ]
+          }
+        ],
+      },
+      {
+        type: "basic",
+        conditions: [
+          {
+            type: "device_if",
+            identifiers: [
+              {
+                is_built_in_keyboard: true,
+              }
+            ]
+          }
+        ],
+        from: {
+          key_code: "fn",
+        },
+        to: [
+          {
+            key_code: "left_shift",
+            modifiers: ["left_control", "left_option"],
+          },
         ],
       },
     ],
