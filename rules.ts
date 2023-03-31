@@ -845,21 +845,6 @@ const rules: KarabinerRules[] = [
   {
     description: "Hyper Key Apps",
     manipulators: [
-      { 
-        type: "basic",
-        description: "Disable CMD + Tab to force Hyper Key usage",
-        from: {
-          key_code: "tab",
-          modifiers: {
-            mandatory: ["left_command"],
-          },
-        },
-        to: [
-          {
-            key_code: "tab",
-          },
-        ],
-      },
       {
         type: "basic",
         description: "Open slack",
