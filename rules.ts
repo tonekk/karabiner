@@ -797,28 +797,6 @@ const rules: KarabinerRules[] = [
         ],
       },
       {
-        description: "Right option -> left command",
-        from: {
-          key_code: "right_option",
-        },
-        to: [
-          {
-            key_code: "left_command",
-          },
-        ],
-        type: "basic",
-        conditions: [
-          {
-            type: "device_if",
-            identifiers: [
-              {
-                is_built_in_keyboard: true,
-              }
-            ]
-          }
-        ],
-      },
-      {
         type: "basic",
         conditions: [
           {
