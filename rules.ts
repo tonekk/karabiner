@@ -4,9 +4,411 @@ import { createHyperSubLayers, app, open } from "./utils";
 
 const rules: KarabinerRules[] = [
   {
+    description: "XBOX",
+    enabled: false,
+    manipulators: [
+      // Mouse Buttons
+      // LEFT CLICK
+      {
+        conditions: [
+          {
+            identifiers: [
+              {
+                product_id: 2835,
+                vendor_id: 1118,
+              },
+            ],
+            type: "device_if",
+          },
+        ],
+        from: {
+          pointing_button: "button8",
+        },
+        to: [
+          {
+            pointing_button: "button1",
+          },
+        ],
+        type: "basic",
+      },
+      // RIGHT CLICK
+      {
+        conditions: [
+          {
+            identifiers: [
+              {
+                product_id: 2835,
+                vendor_id: 1118,
+              },
+            ],
+            type: "device_if",
+          },
+        ],
+        from: {
+          pointing_button: "button7",
+        },
+        to: [
+          {
+            key_code: "button2",
+          },
+        ],
+        type: "basic",
+      },
+
+      // Arrow buttons
+      // DOWN
+      {
+        conditions: [
+          {
+            identifiers: [
+              {
+                product_id: 2835,
+                vendor_id: 1118,
+              },
+            ],
+            type: "device_if",
+          },
+        ],
+        from: {
+          pointing_button: "button1",
+          modifiers: {
+            mandatory: ["left_command"],
+          },
+        },
+        to: [
+          {
+            key_code: "down_arrow",
+          },
+        ],
+        type: "basic",
+      },
+      // RIGHT
+      {
+        conditions: [
+          {
+            identifiers: [
+              {
+                product_id: 2835,
+                vendor_id: 1118,
+              },
+            ],
+            type: "device_if",
+          },
+        ],
+        from: {
+          pointing_button: "button2",
+          modifiers: {
+            mandatory: ["left_command"],
+          },
+        },
+        to: [
+          {
+            key_code: "right_arrow",
+          },
+        ],
+        type: "basic",
+      },
+      // LEFT
+      {
+        conditions: [
+          {
+            identifiers: [
+              {
+                product_id: 2835,
+                vendor_id: 1118,
+              },
+            ],
+            type: "device_if",
+          },
+        ],
+        from: {
+          pointing_button: "button4",
+          modifiers: {
+            mandatory: ["left_command"],
+          },
+        },
+        to: [
+          {
+            key_code: "left_arrow",
+          },
+        ],
+        type: "basic",
+      },
+      // UP
+      {
+        conditions: [
+          {
+            identifiers: [
+              {
+                product_id: 2835,
+                vendor_id: 1118,
+              },
+            ],
+            type: "device_if",
+          },
+        ],
+        from: {
+          pointing_button: "button5",
+          modifiers: {
+            mandatory: ["left_command"],
+          },
+        },
+
+        to: [
+          {
+            key_code: "up_arrow",
+          },
+        ],
+        type: "basic",
+      },
+
+      {
+        conditions: [
+          {
+            identifiers: [
+              {
+                product_id: 2835,
+                vendor_id: 1118,
+              },
+            ],
+            type: "device_if",
+          },
+        ],
+        from: { pointing_button: "button4" },
+        to: [
+          {
+            key_code: "z",
+            modifiers: ["left_command"],
+          },
+        ],
+        type: "basic",
+      },
+      {
+        conditions: [
+          {
+            identifiers: [
+              {
+                product_id: 2835,
+                vendor_id: 1118,
+              },
+            ],
+            type: "device_if",
+          },
+        ],
+        from: { pointing_button: "button5" },
+        to: [
+          {
+            key_code: "z",
+            modifiers: ["shift", "left_command"],
+          },
+        ],
+        type: "basic",
+      },
+
+      {
+        conditions: [
+          {
+            identifiers: [
+              {
+                product_id: 2835,
+                vendor_id: 1118,
+              },
+            ],
+            type: "device_if",
+          },
+        ],
+        from: { pointing_button: "button2" },
+        to: [
+          {
+            key_code: "delete_or_backspace",
+          },
+        ],
+        type: "basic",
+      },
+      {
+        conditions: [
+          {
+            identifiers: [
+              {
+                product_id: 2835,
+                vendor_id: 1118,
+              },
+            ],
+            type: "device_if",
+          },
+        ],
+        from: { pointing_button: "button1" },
+        to: [
+          {
+            key_code: "return_or_enter",
+          },
+        ],
+        type: "basic",
+      },
+      {
+        conditions: [
+          {
+            identifiers: [
+              {
+                product_id: 2835,
+                vendor_id: 1118,
+              },
+            ],
+            type: "device_if",
+          },
+        ],
+        from: { pointing_button: "button15" },
+        to: [
+          {
+            pointing_button: "button1",
+          },
+        ],
+        type: "basic",
+      },
+      {
+        conditions: [
+          {
+            identifiers: [
+              {
+                product_id: 2835,
+                vendor_id: 1118,
+              },
+            ],
+            type: "device_if",
+          },
+        ],
+        from: { pointing_button: "button14" },
+        to: [
+          {
+            pointing_button: "button2",
+          },
+        ],
+        type: "basic",
+      },
+      {
+        conditions: [
+          {
+            identifiers: [
+              {
+                product_id: 2835,
+                vendor_id: 1118,
+              },
+            ],
+            type: "device_if",
+          },
+        ],
+        from: { pointing_button: "button11" },
+        to: [
+          {
+            key_code: "left_command",
+          },
+        ],
+        type: "basic",
+      },
+      {
+        conditions: [
+          {
+            identifiers: [
+              {
+                product_id: 2835,
+                vendor_id: 1118,
+              },
+            ],
+            type: "device_if",
+          },
+        ],
+        from: { pointing_button: "button12" },
+        to: [
+          {
+            key_code: "f1",
+            modifiers: ["fn", "left_command"],
+          },
+        ],
+        type: "basic",
+      },
+    ],
+  },
+  {
+    description: "Footswitch",
+    enabled: false,
+    manipulators: [
+      {
+        conditions: [
+          {
+            identifiers: [
+              {
+                product_id: 45057,
+                vendor_id: 13651,
+              },
+            ],
+            type: "device_if",
+          },
+        ],
+        from: { key_code: "a" },
+        to: [
+          {
+            key_code: "f1",
+            modifiers: ["fn", "left_command"],
+          },
+        ],
+        type: "basic",
+      },
+      {
+        conditions: [
+          {
+            identifiers: [
+              {
+                product_id: 45057,
+                vendor_id: 13651,
+              },
+            ],
+          },
+        ],
+        from: { key_code: "b" },
+        to: [
+          {
+            key_code: "f2",
+            modifiers: ["fn", "left_command"],
+          },
+        ],
+        type: "basic",
+      },
+      {
+        conditions: [
+          {
+            identifiers: [
+              {
+                product_id: 45057,
+                vendor_id: 13651,
+              },
+            ],
+            type: "device_if",
+          },
+        ],
+        from: { key_code: "c" },
+        to: [
+          {
+            key_code: "f4",
+            modifiers: ["fn", "left_command"],
+          },
+        ],
+        type: "basic",
+      },
+    ],
+  },
+  {
     description: "Make interal keyboard behave like moonlander",
     manipulators: [
       {
+        description: "Left option -> Right option",
+        from: {
+          key_code: "left_option",
+        },
+        to: [
+          {
+            key_code: "right_option",
+          },
+        ],
         type: "basic",
         conditions: [
           {
@@ -14,16 +416,8 @@ const rules: KarabinerRules[] = [
             identifiers: [
               {
                 is_built_in_keyboard: true,
-              }
-            ]
-          }
-        ],
-        from: {
-          key_code: "left_command",
-        },
-        to: [
-          {
-            key_code: "right_command",
+              },
+            ],
           },
         ],
       },
@@ -35,14 +429,132 @@ const rules: KarabinerRules[] = [
             identifiers: [
               {
                 is_built_in_keyboard: true,
-              }
-            ]
-          }
+              },
+            ],
+          },
+        ],
+        from: {
+          key_code: "caps_lock",
+        },
+        to: [
+          {
+            key_code: "escape",
+          },
+        ],
+      },
+      {
+        type: "basic",
+        conditions: [
+          {
+            type: "device_if",
+            identifiers: [
+              {
+                is_built_in_keyboard: true,
+              },
+            ],
+          },
+        ],
+        from: {
+          key_code: "j",
+          modifiers: {
+            mandatory: ["left_option"],
+          },
+        },
+        to: [
+          {
+            key_code: "down_arrow",
+          },
+        ],
+      },
+      {
+        type: "basic",
+        conditions: [
+          {
+            type: "device_if",
+            identifiers: [
+              {
+                is_built_in_keyboard: true,
+              },
+            ],
+          },
+        ],
+        from: {
+          key_code: "h",
+          modifiers: {
+            mandatory: ["left_option"],
+          },
+        },
+        to: [
+          {
+            key_code: "left_arrow",
+          },
+        ],
+      },
+      {
+        type: "basic",
+        conditions: [
+          {
+            type: "device_if",
+            identifiers: [
+              {
+                is_built_in_keyboard: true,
+              },
+            ],
+          },
+        ],
+        from: {
+          key_code: "k",
+          modifiers: {
+            mandatory: ["left_option"],
+          },
+        },
+        to: [
+          {
+            key_code: "up_arrow",
+          },
+        ],
+      },
+      {
+        type: "basic",
+        conditions: [
+          {
+            type: "device_if",
+            identifiers: [
+              {
+                is_built_in_keyboard: true,
+              },
+            ],
+          },
+        ],
+        from: {
+          key_code: "l",
+          modifiers: {
+            mandatory: ["left_option"],
+          },
+        },
+        to: [
+          {
+            key_code: "right_arrow",
+          },
+        ],
+      },
+
+      {
+        type: "basic",
+        conditions: [
+          {
+            type: "device_if",
+            identifiers: [
+              {
+                is_built_in_keyboard: true,
+              },
+            ],
+          },
         ],
         from: {
           key_code: "d",
           modifiers: {
-            mandatory: ["right_command"],
+            mandatory: ["right_option"],
           },
         },
         to: [
@@ -60,14 +572,14 @@ const rules: KarabinerRules[] = [
             identifiers: [
               {
                 is_built_in_keyboard: true,
-              }
-            ]
-          }
+              },
+            ],
+          },
         ],
         from: {
           key_code: "f",
           modifiers: {
-            mandatory: ["right_command"],
+            mandatory: ["right_option"],
           },
         },
         to: [
@@ -85,14 +597,14 @@ const rules: KarabinerRules[] = [
             identifiers: [
               {
                 is_built_in_keyboard: true,
-              }
-            ]
-          }
+              },
+            ],
+          },
         ],
         from: {
           key_code: "c",
           modifiers: {
-            mandatory: ["right_command"],
+            mandatory: ["right_option"],
           },
         },
         to: [
@@ -109,14 +621,14 @@ const rules: KarabinerRules[] = [
             identifiers: [
               {
                 is_built_in_keyboard: true,
-              }
-            ]
-          }
+              },
+            ],
+          },
         ],
         from: {
           key_code: "v",
           modifiers: {
-            mandatory: ["right_command"],
+            mandatory: ["right_option"],
           },
         },
         to: [
@@ -133,14 +645,14 @@ const rules: KarabinerRules[] = [
             identifiers: [
               {
                 is_built_in_keyboard: true,
-              }
-            ]
-          }
+              },
+            ],
+          },
         ],
         from: {
           key_code: "e",
           modifiers: {
-            mandatory: ["right_command"],
+            mandatory: ["right_option"],
           },
         },
         to: [
@@ -158,14 +670,14 @@ const rules: KarabinerRules[] = [
             identifiers: [
               {
                 is_built_in_keyboard: true,
-              }
-            ]
-          }
+              },
+            ],
+          },
         ],
         from: {
           key_code: "r",
           modifiers: {
-            mandatory: ["right_command"],
+            mandatory: ["right_option"],
           },
         },
         to: [
@@ -183,14 +695,14 @@ const rules: KarabinerRules[] = [
             identifiers: [
               {
                 is_built_in_keyboard: true,
-              }
-            ]
-          }
+              },
+            ],
+          },
         ],
         from: {
           key_code: "q",
           modifiers: {
-            mandatory: ["right_command"],
+            mandatory: ["right_option"],
           },
         },
         to: [
@@ -208,14 +720,14 @@ const rules: KarabinerRules[] = [
             identifiers: [
               {
                 is_built_in_keyboard: true,
-              }
-            ]
-          }
+              },
+            ],
+          },
         ],
         from: {
           key_code: "w",
           modifiers: {
-            mandatory: ["right_command"],
+            mandatory: ["right_option"],
           },
         },
         to: [
@@ -232,14 +744,14 @@ const rules: KarabinerRules[] = [
             identifiers: [
               {
                 is_built_in_keyboard: true,
-              }
-            ]
-          }
+              },
+            ],
+          },
         ],
         from: {
           key_code: "m",
           modifiers: {
-            mandatory: ["right_command"],
+            mandatory: ["right_option"],
           },
         },
         to: [
@@ -256,14 +768,14 @@ const rules: KarabinerRules[] = [
             identifiers: [
               {
                 is_built_in_keyboard: true,
-              }
-            ]
-          }
+              },
+            ],
+          },
         ],
         from: {
           key_code: "j",
           modifiers: {
-            mandatory: ["right_command"],
+            mandatory: ["right_option"],
           },
         },
         to: [
@@ -281,14 +793,14 @@ const rules: KarabinerRules[] = [
             identifiers: [
               {
                 is_built_in_keyboard: true,
-              }
-            ]
-          }
+              },
+            ],
+          },
         ],
         from: {
           key_code: "i",
           modifiers: {
-            mandatory: ["right_command"],
+            mandatory: ["right_option"],
           },
         },
         to: [
@@ -306,14 +818,14 @@ const rules: KarabinerRules[] = [
             identifiers: [
               {
                 is_built_in_keyboard: true,
-              }
-            ]
-          }
+              },
+            ],
+          },
         ],
         from: {
           key_code: "h",
           modifiers: {
-            mandatory: ["right_command"],
+            mandatory: ["right_option"],
           },
         },
         to: [
@@ -331,14 +843,14 @@ const rules: KarabinerRules[] = [
             identifiers: [
               {
                 is_built_in_keyboard: true,
-              }
-            ]
-          }
+              },
+            ],
+          },
         ],
         from: {
           key_code: "g",
           modifiers: {
-            mandatory: ["right_command"],
+            mandatory: ["right_option"],
           },
         },
         to: [
@@ -355,14 +867,14 @@ const rules: KarabinerRules[] = [
             identifiers: [
               {
                 is_built_in_keyboard: true,
-              }
-            ]
-          }
+              },
+            ],
+          },
         ],
         from: {
           key_code: "b",
           modifiers: {
-            mandatory: ["right_command"],
+            mandatory: ["right_option"],
           },
         },
         to: [
@@ -380,14 +892,14 @@ const rules: KarabinerRules[] = [
             identifiers: [
               {
                 is_built_in_keyboard: true,
-              }
-            ]
-          }
+              },
+            ],
+          },
         ],
         from: {
           key_code: "p",
           modifiers: {
-            mandatory: ["right_command"],
+            mandatory: ["right_option"],
           },
         },
         to: [
@@ -405,14 +917,14 @@ const rules: KarabinerRules[] = [
             identifiers: [
               {
                 is_built_in_keyboard: true,
-              }
-            ]
-          }
+              },
+            ],
+          },
         ],
         from: {
           key_code: "k",
           modifiers: {
-            mandatory: ["right_command"],
+            mandatory: ["right_option"],
           },
         },
         to: [
@@ -430,14 +942,14 @@ const rules: KarabinerRules[] = [
             identifiers: [
               {
                 is_built_in_keyboard: true,
-              }
-            ]
-          }
+              },
+            ],
+          },
         ],
         from: {
           key_code: "l",
           modifiers: {
-            mandatory: ["right_command"],
+            mandatory: ["right_option"],
           },
         },
         to: [
@@ -455,14 +967,14 @@ const rules: KarabinerRules[] = [
             identifiers: [
               {
                 is_built_in_keyboard: true,
-              }
-            ]
-          }
+              },
+            ],
+          },
         ],
         from: {
           key_code: "n",
           modifiers: {
-            mandatory: ["right_command"],
+            mandatory: ["right_option"],
           },
         },
         to: [
@@ -480,14 +992,14 @@ const rules: KarabinerRules[] = [
             identifiers: [
               {
                 is_built_in_keyboard: true,
-              }
-            ]
-          }
+              },
+            ],
+          },
         ],
         from: {
           key_code: "t",
           modifiers: {
-            mandatory: ["right_command"],
+            mandatory: ["right_option"],
           },
         },
         to: [
@@ -505,14 +1017,14 @@ const rules: KarabinerRules[] = [
             identifiers: [
               {
                 is_built_in_keyboard: true,
-              }
-            ]
-          }
+              },
+            ],
+          },
         ],
         from: {
           key_code: "y",
           modifiers: {
-            mandatory: ["right_command"],
+            mandatory: ["right_option"],
           },
         },
         to: [
@@ -529,14 +1041,14 @@ const rules: KarabinerRules[] = [
             identifiers: [
               {
                 is_built_in_keyboard: true,
-              }
-            ]
-          }
+              },
+            ],
+          },
         ],
         from: {
           key_code: "x",
           modifiers: {
-            mandatory: ["right_command"],
+            mandatory: ["right_option"],
           },
         },
         to: [
@@ -554,14 +1066,14 @@ const rules: KarabinerRules[] = [
             identifiers: [
               {
                 is_built_in_keyboard: true,
-              }
-            ]
-          }
+              },
+            ],
+          },
         ],
         from: {
           key_code: "z",
           modifiers: {
-            mandatory: ["right_command"],
+            mandatory: ["right_option"],
           },
         },
         to: [
@@ -579,14 +1091,14 @@ const rules: KarabinerRules[] = [
             identifiers: [
               {
                 is_built_in_keyboard: true,
-              }
-            ]
-          }
+              },
+            ],
+          },
         ],
         from: {
           key_code: "comma",
           modifiers: {
-            mandatory: ["right_command"],
+            mandatory: ["right_option"],
           },
         },
         to: [
@@ -604,14 +1116,14 @@ const rules: KarabinerRules[] = [
             identifiers: [
               {
                 is_built_in_keyboard: true,
-              }
-            ]
-          }
+              },
+            ],
+          },
         ],
         from: {
           key_code: "period",
           modifiers: {
-            mandatory: ["right_command"],
+            mandatory: ["right_option"],
           },
         },
         to: [
@@ -629,14 +1141,14 @@ const rules: KarabinerRules[] = [
             identifiers: [
               {
                 is_built_in_keyboard: true,
-              }
-            ]
-          }
+              },
+            ],
+          },
         ],
         from: {
           key_code: "slash",
           modifiers: {
-            mandatory: ["right_command"],
+            mandatory: ["right_option"],
           },
         },
         to: [
@@ -654,14 +1166,14 @@ const rules: KarabinerRules[] = [
             identifiers: [
               {
                 is_built_in_keyboard: true,
-              }
-            ]
-          }
+              },
+            ],
+          },
         ],
         from: {
           key_code: "a",
           modifiers: {
-            mandatory: ["right_command"],
+            mandatory: ["right_option"],
           },
         },
         to: [
@@ -679,14 +1191,14 @@ const rules: KarabinerRules[] = [
             identifiers: [
               {
                 is_built_in_keyboard: true,
-              }
-            ]
-          }
+              },
+            ],
+          },
         ],
         from: {
           key_code: "o",
           modifiers: {
-            mandatory: ["right_command"],
+            mandatory: ["right_option"],
           },
         },
         to: [
@@ -704,14 +1216,14 @@ const rules: KarabinerRules[] = [
             identifiers: [
               {
                 is_built_in_keyboard: true,
-              }
-            ]
-          }
+              },
+            ],
+          },
         ],
         from: {
           key_code: "u",
           modifiers: {
-            mandatory: ["right_command"],
+            mandatory: ["right_option"],
           },
         },
         to: [
@@ -729,14 +1241,14 @@ const rules: KarabinerRules[] = [
             identifiers: [
               {
                 is_built_in_keyboard: true,
-              }
-            ]
-          }
+              },
+            ],
+          },
         ],
         from: {
           key_code: "s",
           modifiers: {
-            mandatory: ["right_command"],
+            mandatory: ["right_option"],
           },
         },
         to: [
@@ -746,7 +1258,7 @@ const rules: KarabinerRules[] = [
           },
         ],
       },
-    ]
+    ],
   },
   {
     description: "Hyper & Meh Key",
@@ -769,32 +1281,10 @@ const rules: KarabinerRules[] = [
             identifiers: [
               {
                 is_built_in_keyboard: true,
-              }
-            ]
-          }
-        ],
-      },
-      {
-        description: "Left option -> Left command",
-        from: {
-          key_code: "left_option",
-        },
-        to: [
-          {
-            key_code: "left_command",
+              },
+            ],
           },
         ],
-        type: "basic",
-        conditions: [
-          {
-            type: "device_if",
-            identifiers: [
-              {
-                is_built_in_keyboard: true,
-              }
-            ]
-          }
-        ],
       },
       {
         type: "basic",
@@ -804,9 +1294,9 @@ const rules: KarabinerRules[] = [
             identifiers: [
               {
                 is_built_in_keyboard: true,
-              }
-            ]
-          }
+              },
+            ],
+          },
         ],
         from: {
           key_code: "fn",
@@ -837,7 +1327,7 @@ const rules: KarabinerRules[] = [
             ],
           },
         },
-        ...app("Slack")
+        ...app("Slack"),
       },
       {
         type: "basic",
@@ -853,7 +1343,7 @@ const rules: KarabinerRules[] = [
             ],
           },
         },
-        ...app("Alacritty")
+        ...app("Alacritty"),
       },
       {
         type: "basic",
@@ -869,7 +1359,7 @@ const rules: KarabinerRules[] = [
             ],
           },
         },
-        ...app("Telegram")
+        ...app("Telegram"),
       },
       {
         type: "basic",
@@ -885,7 +1375,7 @@ const rules: KarabinerRules[] = [
             ],
           },
         },
-        ...app("Google Chrome")
+        ...app("Google Chrome"),
       },
       {
         type: "basic",
@@ -901,7 +1391,7 @@ const rules: KarabinerRules[] = [
             ],
           },
         },
-        ...app("Notion")
+        ...app("Notion"),
       },
       {
         type: "basic",
@@ -917,9 +1407,9 @@ const rules: KarabinerRules[] = [
             ],
           },
         },
-        ...app("Linear")
+        ...app("Linear"),
       },
-    ]
+    ],
   },
 ];
 
